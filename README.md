@@ -1,0 +1,1 @@
+# practice-for-ch-sql-n-plus-one-buster
