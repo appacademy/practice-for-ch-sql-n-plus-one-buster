@@ -1,8 +1,8 @@
-class CreatePlants < ActiveRecord::Migration[6.1]
+class CreatePlants < ActiveRecord::Migration[7.0]
   def change
     create_table :plants do |t|
       t.string :species, null: false
-      t.bigint :gardener_id, null: false, index: true
+      t.references :gardener, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,8 +1,8 @@
-class CreateBuses < ActiveRecord::Migration[6.1]
+class CreateBuses < ActiveRecord::Migration[7.0]
   def change
     create_table :buses do |t|
       t.string :model, null: false
-      t.bigint :route_id, null: false, index: true
+      t.references :route, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,8 +1,8 @@
-class CreateDrivers < ActiveRecord::Migration[6.1]
+class CreateDrivers < ActiveRecord::Migration[7.0]
   def change
     create_table :drivers do |t|
       t.string :name, null: false
-      t.bigint :bus_id, null: false, index: true
+      t.references :bus, null: false, foreign_key: true
 
       t.timestamps
     end

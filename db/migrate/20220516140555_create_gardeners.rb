@@ -1,8 +1,8 @@
-class CreateGardeners < ActiveRecord::Migration[6.1]
+class CreateGardeners < ActiveRecord::Migration[7.0]
   def change
     create_table :gardeners do |t|
       t.string :name, null: false
-      t.bigint :house_id, null: false, index: true
+      t.references :house, null: false, foreign_key: true
 
       t.timestamps
     end
