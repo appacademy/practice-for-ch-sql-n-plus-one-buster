@@ -17,5 +17,6 @@ class Bus < ApplicationRecord
   has_many :drivers,
     class_name: 'Driver',
     foreign_key: :bus_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end

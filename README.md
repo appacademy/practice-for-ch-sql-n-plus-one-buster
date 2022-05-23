@@ -40,7 +40,8 @@ class Album
   has_many :tracks,
     class_name: 'Track',
     foreign_key: :album_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end
 
 # app/models/artist.rb
@@ -48,7 +49,8 @@ class Artist
   has_many :albums,
     class_name: 'Album',
     foreign_key: :artist_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   def n_plus_one_tracks
     my_albums = self.albums
@@ -123,7 +125,8 @@ class Gardener
   has_many :plants,
     class_name: 'Plant',
     foreign_key: :gardener_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end
 
 # app/models/plant.rb
@@ -136,7 +139,8 @@ class Plant
   has_many :seeds,
     class_name: 'Seed',
     foreign_key: :plant_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end
 
 # app/models/seed.rb
@@ -152,7 +156,8 @@ class House
   has_many :gardeners,
     class_name: 'Gardener',
     foreign_key: :house_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :plants,
     through: :gardeners,
@@ -204,7 +209,8 @@ class Bus
   has_many :drivers,
     class_name: 'Driver',
     foreign_key: :bus_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end
 
 # app/models/route.rb
@@ -212,7 +218,8 @@ class Route
   has_many :buses,
     class_name: 'Bus',
     foreign_key: :route_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   def n_plus_one_drivers
     all_drivers = {}

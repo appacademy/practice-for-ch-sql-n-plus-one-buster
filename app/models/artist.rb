@@ -11,7 +11,8 @@ class Artist < ApplicationRecord
   has_many :albums,
     class_name: 'Album',
     foreign_key: :artist_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   def n_plus_one_tracks
     my_albums = self.albums

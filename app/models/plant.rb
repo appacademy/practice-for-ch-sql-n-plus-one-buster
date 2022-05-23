@@ -17,5 +17,6 @@ class Plant < ApplicationRecord
   has_many :seeds,
     class_name: 'Seed',
     foreign_key: :plant_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 end

@@ -11,7 +11,8 @@ class Route < ApplicationRecord
   has_many :buses,
     class_name: 'Bus',
     foreign_key: :route_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   def n_plus_one_drivers
     all_drivers = {}
