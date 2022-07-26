@@ -13,9 +13,9 @@ code that will produce the same result without causing an N+1 query. Test the
 query methods in the Rails console as you work. Remember to look at the SQL
 queries displayed in the console to see if you're making an N+1 query.
 
-Refer to the [joins demo][demo] for hints on what you might want to do!
+Refer to the [Joins Demo][demo] for hints on what you might want to do!
 
-[demo]: https://github.com/appacademy/practice-for-ch-sql-joins_demo
+[demo]: https://github.com/appacademy/practice-for-ch-sql-joins-demo
 
 ## Artists, Albums, and Tracks
 
